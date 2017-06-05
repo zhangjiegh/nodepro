@@ -23,24 +23,11 @@ app.use(bodyParser.urlencoded({ extended: false }));//解析json和form
 app.use(cookieParser()); //COOKIES
 app.use(express.static(path.join(__dirname, 'public')));
 
-const port = normalizePort(process.env.PORT ||3000);
-app.set('port', port);
+const config = require('./core/config');
+const init = require('./core/initCore').init;
+console.log(config.port);
+app.set('port', process.env.PORT ||config.port);
 
-function normalizePort(val) {
-    const port = parseInt(val, 10);
-
-    if (isNaN(port)) {
-        // named pipe
-        return val;
-    }
-
-    if (port >= 0) {
-        // port number
-        return port;
-    }
-
-    return false;
-}
-
+init(app,config);
 
 module.exports = app;
