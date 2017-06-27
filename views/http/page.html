@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>欢迎</title>
+	<link rel="stylesheet" href="/layui/css/layui.css">
+	<script type="text/javascript" src="/js/jquery.js"></script>
+	<script type="text/javascript" src="/layui/layui.js"></script>
+</head>
+<body>
+
+
+
+<div class="layui-layout layui-layout-admin">
+<% include ../tomponent/header.html %>
+
+<% include ../tomponent/aside.html%>
+
+
+<section class="layui-body" style="margin:10px 10px 10px 20px">
+	<fieldset class="layui-elem-field layui-field-title" >
+	  <legend>分页查询</legend>
+	</fieldset>
+
+
+	<div class="layui-form">
+	  <table class="layui-table">
+	    <colgroup>
+	      <col width="50">
+	      <col width="100">
+	      <col width="200">
+	      <col width="300">
+	      <col width="80">
+	      <col width="80">
+	      <col>
+	    </colgroup>
+	    <thead>
+	      <tr>
+	        <th><input name="" lay-skin="primary" lay-filter="allChoose" type="checkbox"></th>
+	        <th>图像</th>
+	        <th>题目</th>
+	        <th>关键字</th>
+	        <th>访问次数</th>
+	        <th>收藏数</th>
+	        <th>时间</th>
+	      </tr> 
+	    </thead>
+	    <tbody>
+		
+			<% data.forEach(function(info){
+				var img = "http://tnfs.tngou.net/image"+info.img+"_180x120";
+				var time = new Date(info.time).toLocaleString().replace(/年|月/g, "-").replace(/日/g, " ");
+			%>
+				<tr>
+		        <td><input name="" lay-skin="primary" type="checkbox"></td>
+		        <td>
+		        	<img src="<%=img%>" height="40" width="60">
+		        </td>
+		        <td><%=info.title%></td>
+		        <td><%=info.keywords%></td>
+		        <td><%=info.count%> </td>
+		        <td><%=info.fcount%></td>
+		        <td><%=time%></td>
+		      	</tr>
+
+
+			<%})%>
+	      
+	    </tbody>
+	  </table>
+	</div>
+
+	<div id="demo1" style="text-align: center;"></div>
+	
+	<form action="/http/page"  method="get" id="searchForm">
+		<input id="page" type="hidden" name="page" value="<%=page%>">
+		<input type="hidden" name="rows" value="<%=rows%>">
+	</form>
+
+</section>
+<% include ../tomponent/footer.html %>
+</div>
+
+<script>
+layui.use(['laypage'], function(){
+
+  	var laypage = layui.laypage;
+  	
+	laypage({
+    	cont: 'demo1'
+    	,pages: <%= total%> 
+    	,groups: 5
+    	,curr: <%= page%>
+    	,skin: '#428bca' //颜色
+    	,jump: function(obj, first){
+      		if(!first){
+        		$("#page").val(obj.curr);
+        		$('#searchForm').submit();                
+                //layer.msg('第'+ obj.curr +'页');
+      		}
+    	}	
+  	});		
+
+});
+
+
+</script>
+</body>
+</html>
