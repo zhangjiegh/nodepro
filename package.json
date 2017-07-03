@@ -12,30 +12,11 @@
     "ejs": "~2.5.2",
     "express": "~4.14.0",
     "serve-favicon": "~2.3.0",
-    "log4js":"1.1.1",
     "express-session":"1.15.1",
     "redis": "^2.6.2",
-    "connect-redis": "^3.1.0",
-    "morgan": "~1.7.0",
-    "file-stream-rotator":"*",
-    "memory-cache": "^0.1.4",
-    "express-session": "^1.14.0",    
-    "md5": "^2.2.1",
-    "xml": "^1.0.1", 
-    "xpath.js":"^1.0.7",
-    "xmldom": "^0.1.27",
-    "sha1": "^1.1.1",
-    "waterline":"^0.11.11",
-    "sails-mysql":"^0.11.5",
-    "sails-mongo":"^0.12.2",
-    "bcrypt":"^1.0.2",
-    "eslint": "^3.14.1",
-    "eslint-friendly-formatter": "^2.0.7",
-    "eslint-loader": "^1.6.1",
-    "eslint-plugin-html": "^2.0.0",
-    "eslint-config-standard": "^6.2.1",
-    "eslint-plugin-promise": "^3.4.0",
-    "eslint-plugin-standard": "^2.0.1"
+    "morgan": "~1.7.0"
+
+
   },
   "devDependencies": {
     "connect-livereload": "latest",

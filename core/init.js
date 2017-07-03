@@ -13,8 +13,6 @@ if(fs.existsSync('/apps/project/node/conf/demo/options.js')){
 const options= require(CONF_PATH + "options");
 
 
-
-
 module.exports.initCore = function (app) {
     const port = normalizePort(process.env.PORT || options.base.port);
     app.set('port',port);
