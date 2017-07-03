@@ -17,6 +17,9 @@ module.exports.initCore = function (app) {
     const port = normalizePort(process.env.PORT || options.base.port);
     app.set('port',port);
 
+    //======================session======================
+    require('./session')(app,options.sessionOption);
+
     //===================过滤配置=========================
     require('./filter')(app,config);
 

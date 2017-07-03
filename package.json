@@ -7,16 +7,15 @@
   },
   "dependencies": {
     "body-parser": "~1.15.2",
+    "connect-redis": "^3.3.0",
     "cookie-parser": "~1.4.3",
     "debug": "~2.2.0",
     "ejs": "~2.5.2",
     "express": "~4.14.0",
-    "serve-favicon": "~2.3.0",
-    "express-session":"1.15.1",
+    "express-session": "1.15.1",
+    "morgan": "~1.7.0",
     "redis": "^2.6.2",
-    "morgan": "~1.7.0"
-
-
+    "serve-favicon": "~2.3.0"
   },
   "devDependencies": {
     "connect-livereload": "latest",
@@ -27,13 +26,13 @@
     "grunt-contrib-connect": "latest",
     "grunt-contrib-copy": "latest",
     "grunt-contrib-cssmin": "latest",
+    "grunt-contrib-eslint": "latest",
     "grunt-contrib-htmlmin": "latest",
     "grunt-contrib-imagemin": "latest",
     "grunt-contrib-jshint": "latest",
     "grunt-contrib-qunit": "latest",
     "grunt-contrib-uglify": "latest",
     "grunt-contrib-watch": "latest",
-    "grunt-contrib-eslint": "latest",
     "grunt-express-server": "latest",
     "grunt-nodemon": "latest",
     "grunt-shell": "^1.3.0",
