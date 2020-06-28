@@ -4,7 +4,7 @@
 </head>
 <body>
 <h2>程序相关</h2>
-<p>发现bug,能指点我的发问题到su2010yxfs@163.com,先谢过</p>
+<p>发现bug,能指点我的发问题到13144126585@163.com,先谢过</p>
 <p>包含了grunt,layui,微信相关,后台模版,waterline</p>
 <p>网络请求需要先经过过滤器 在core/config里面配置,没有配置将回到index界面</p>
 <p>微信相关 需要配置wx/config里面配置 然后使用微信模拟器,并修改C:\Windows\System32\drivers\etc\hosts</p>
@@ -31,5 +31,5 @@
 <h2>打包</h2>
 <p>配置路径</p>
 <p>命令grunt install 打包</p>
-Edit By <a href="http://mahua.jser.me">MaHua</a>
+
 </body></html>
